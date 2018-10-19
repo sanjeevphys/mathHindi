@@ -9,4 +9,5 @@ $ git commit -m "first commit"
 $ git remote add origin https://github.com/sanjeevphys/mathHindi.git
 $ git push -u origin master
 username and password
+If above doesn't work; edit directly by clicking on the pencil sign on right up corner of file at github
 */
