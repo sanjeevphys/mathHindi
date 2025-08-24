@@ -1,6 +1,7 @@
-* Testing script for writing equations
+* About the directory
+This directory was created to test hiwiki equations in Hindi. I had a successful script for that and tested. I do not know wether that is working now.
 
-** Before making changes:
+** Before making changes (Testing script for writing equations):
 #+begin_src shell
 wget https://raw.githubusercontent.com/sanjeevphys/mathHindi/master/mathscript.js
 emacs -nw mathscript.js
@@ -11,3 +12,16 @@ git remote add origin https://github.com/sanjeevphys/mathHindi.git
 git push -u origin master
 #+end_src
 username and password
+
+* File list:
+** README.org
+- This file was =README.md= earlier. Now it is changed to =README.org=
+- This include the details of this directory.
+
+** Wikisource scripts
+- File [[ajit_wikisource_test.py]] was written for AKTBot, which runs at colab and OCR pages for [[https://hi.wikisource.org/wiki/][hiwikisource]].
+- File [[test_wikisource.py]] was file which was created to test OCR on hiwikisource.
+- File [[empty_wikisource.py]] was written to check empty pages on hiwikisource and mark them as "WithoutText".
+
+** Error discussions
+- File [[errors_DreamRimmer.org]] was created to share error messages with DreamRimmer. I wrote to show him errors I faced while running the script blindly given by him. More details can be found in that file itself.
