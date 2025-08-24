@@ -1,5 +1,6 @@
 * Error dicussions with DreamRimmer:
 ** About welcome message
+#+begin_comment
 Error message while running [[https://github.com/DreamRimmer/Hindi-WP/blob/main/hiwikiwelcome.py][hiwikiwelcome.py]] (commit: 0338854907)
 #+begin_example
 Traceback (most recent call last):
@@ -29,3 +30,7 @@ toolforge-jobs run hiwikiwelcome \
   --schedule "0 0 * * *" \
   --retry 1
 #+end_src
+
+- Error resolved. This was the error because I was running it just with login. I have to run it from hiwiki environment.
+- Run command is having =--schedule "0 0 * * *"= which implies, it should run at 00:00:00 (UTC) each day. If I want to change the time, I have to change this.
+#+end_comment
