@@ -1,0 +1,31 @@
+* Error dicussions with DreamRimmer:
+** About welcome message
+Error message while running [[https://github.com/DreamRimmer/Hindi-WP/blob/main/hiwikiwelcome.py][hiwikiwelcome.py]] (commit: 0338854907)
+#+begin_example
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/tjf_cli/cli.py", line 1082, in main
+    kubeconfig = Kubeconfig.load()
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/toolforge_weld/kubernetes_config.py", line 98, in load
+    raise KubernetesConfigFileNotFoundException(str(path.resolve()))
+toolforge_weld.kubernetes_config.KubernetesConfigFileNotFoundException: /mnt/nfs/labstore-secondary-tools-home/sanjeevkumar/.kube/config
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/bin/toolforge-jobs", line 33, in <module>
+    sys.exit(load_entry_point('toolforge-jobs-cli==16.1.18', 'console_scripts', 'toolforge-jobs')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/tjf_cli/cli.py", line 1090, in main
+    raise ToolforgeError(
+toolforge_weld.errors.ToolforgeError: Failed to load configuration, did you forget to run 'become <mytool>'?
+#+end_example
+
+Command to run the script:
+#+begin_src bash
+toolforge-jobs run hiwikiwelcome \
+  --command "$HOME/pwbvenv/bin/python3 $HOME/customscripts/hiwikiwelcome.py" \
+  --image python3.11 \
+  --schedule "0 0 * * *" \
+  --retry 1
+#+end_src
